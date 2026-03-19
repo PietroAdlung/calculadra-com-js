@@ -1,0 +1,139 @@
+/* ===== RESET & BASE ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== VARIÁVEIS ===== */
+:root {
+  --bg-page: #1a1a2e;
+  --bg-calc: #16213e;
+  --bg-display: #0f3460;
+  --bg-btn: #1e3a5f;
+  --bg-btn-hover: #25496e;
+  --bg-op: #e94560;
+  --bg-op-hover: #ff5577;
+  --bg-equal: #e94560;
+  --bg-equal-hover: #ff2255;
+  --bg-clear: #533483;
+  --bg-clear-hover: #6a42a8;
+
+  --text-display: #eaeaea;
+  --text-expression: #94a3b8;
+  --text-btn: #ffffff;
+
+  --border-radius: 16px;
+  --btn-radius: 12px;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-page);
+  font-family: var(--font);
+}
+
+/* ===== CALCULADORA ===== */
+.calculator {
+  width: 320px;
+  background: var(--bg-calc);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+/* ===== DISPLAY ===== */
+.display {
+  background: var(--bg-display);
+  padding: 24px 20px 16px;
+  text-align: right;
+  min-height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.expression {
+  color: var(--text-expression);
+  font-size: 14px;
+  min-height: 18px;
+  word-break: break-all;
+}
+
+.result {
+  color: var(--text-display);
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-break: break-all;
+  transition: font-size 0.1s;
+}
+
+/* ===== BOTÕES ===== */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  padding: 20px;
+}
+
+.btn {
+  background: var(--bg-btn);
+  color: var(--text-btn);
+  border: none;
+  border-radius: var(--btn-radius);
+  padding: 18px 10px;
+  font-size: 20px;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  user-select: none;
+}
+
+.btn:hover {
+  background: var(--bg-btn-hover);
+}
+
+.btn:active {
+  transform: scale(0.93);
+}
+
+/* Botão de operação (÷ × − +) */
+.btn-op {
+  background: var(--bg-op);
+}
+
+.btn-op:hover {
+  background: var(--bg-op-hover);
+}
+
+/* Botão igual */
+.btn-equal {
+  background: var(--bg-equal);
+  font-size: 24px;
+}
+
+.btn-equal:hover {
+  background: var(--bg-equal-hover);
+}
+
+/* Botão limpar */
+.btn-clear {
+  background: var(--bg-clear);
+}
+
+.btn-clear:hover {
+  background: var(--bg-clear-hover);
+}
+
+/* Ocupar duas colunas */
+.span-two {
+  grid-column: span 2;
+}
